@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: plus-bility-management-v4
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: plus-bility-db
+          property: connectionString
+databases:
+  - name: plus-bility-db

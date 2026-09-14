@@ -1,0 +1,211 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "name": "관리자",
+      "role": "admin",
+      "password": "admin1234"
+    },
+    {
+      "id": "staff01",
+      "name": "직원1",
+      "role": "staff",
+      "password": "1234"
+    }
+  ],
+  "settings": {
+    "programs": [
+      "Ability",
+      "CRE"
+    ],
+    "payments": [
+      "PAY",
+      "카드",
+      "현금"
+    ],
+    "regs": [
+      "소개",
+      "재등록",
+      "최초"
+    ],
+    "sessions": [
+      "12",
+      "24"
+    ],
+    "fixed": [
+      "관리비",
+      "노랑우산공제",
+      "인터넷",
+      "임대료",
+      "정수기",
+      "핸드폰",
+      "후원금"
+    ],
+    "variable": [
+      "급여",
+      "기타",
+      "대출",
+      "물품",
+      "세금",
+      "홍보"
+    ],
+    "genders": [
+      "남성",
+      "여성"
+    ],
+    "expenseTypes": [
+      "고정",
+      "변동"
+    ]
+  },
+  "sales": [
+    {
+      "id": 100001,
+      "member": "김범구",
+      "gender": "",
+      "program": "Ability",
+      "sessions": "12",
+      "reg": "재등록",
+      "date": "2026-09-02",
+      "days": 60,
+      "end": "2026-11-13",
+      "amount": 1169640.0,
+      "method": "현금",
+      "note": "김범구 재등록",
+      "inputter": "관리자",
+      "createdAt": "2026-09-02T12:00:00",
+      "source": "(남규리)회원등록.xlsx"
+    },
+    {
+      "id": 100002,
+      "member": "정지은",
+      "gender": "",
+      "program": "Ability",
+      "sessions": "12",
+      "reg": "최초",
+      "date": "2026-09-02",
+      "days": 120,
+      "end": "2026-12-31",
+      "amount": 1231200.0,
+      "method": "현금",
+      "note": "정지은 50분",
+      "inputter": "관리자",
+      "createdAt": "2026-09-02T12:00:00",
+      "source": "(남규리)회원등록.xlsx"
+    },
+    {
+      "id": 100003,
+      "member": "이용미",
+      "gender": "",
+      "program": "Ability",
+      "sessions": "24",
+      "reg": "최초",
+      "date": "2026-09-03",
+      "days": 120,
+      "end": "2027-01-01",
+      "amount": 2249000.0,
+      "method": "카드",
+      "note": "이용미 50분",
+      "inputter": "관리자",
+      "createdAt": "2026-09-03T12:00:00",
+      "source": "(남규리)회원등록.xlsx"
+    },
+    {
+      "id": 100004,
+      "member": "강희진",
+      "gender": "",
+      "program": "CRE",
+      "sessions": "12",
+      "reg": "재등록",
+      "date": "2026-09-07",
+      "days": 120,
+      "end": "2027-01-05",
+      "amount": 1169640.0,
+      "method": "현금",
+      "note": "강희진 재등록",
+      "inputter": "관리자",
+      "createdAt": "2026-09-07T12:00:00",
+      "source": "(남규리)회원등록.xlsx"
+    },
+    {
+      "id": 100005,
+      "member": "황태희",
+      "gender": "",
+      "program": "Ability",
+      "sessions": "12",
+      "reg": "재등록",
+      "date": "2026-09-08",
+      "days": 60,
+      "end": "2026-11-07",
+      "amount": 1231200.0,
+      "method": "카드",
+      "note": "황태희 재등록",
+      "inputter": "관리자",
+      "createdAt": "2026-09-08T12:00:00",
+      "source": "(남규리)회원등록.xlsx"
+    },
+    {
+      "id": 100006,
+      "member": "주하진",
+      "gender": "",
+      "program": "Ability",
+      "sessions": "12",
+      "reg": "재등록",
+      "date": "2026-09-08",
+      "days": 120,
+      "end": "2027-01-06",
+      "amount": 1231200.0,
+      "method": "카드",
+      "note": "주하진 재등록",
+      "inputter": "관리자",
+      "createdAt": "2026-09-08T12:00:00",
+      "source": "(남규리)회원등록.xlsx"
+    },
+    {
+      "id": 100007,
+      "member": "정지은",
+      "gender": "",
+      "program": "Ability",
+      "sessions": "12",
+      "reg": "최초",
+      "date": "2026-09-09",
+      "days": 120,
+      "end": "2026-12-31",
+      "amount": 1072800.0,
+      "method": "카드",
+      "note": "정지은 50분",
+      "inputter": "관리자",
+      "createdAt": "2026-09-09T12:00:00",
+      "source": "(남규리)회원등록.xlsx"
+    }
+  ],
+  "expenses": [
+    {
+      "id": 200000,
+      "date": "2026-09-01",
+      "type": "고정",
+      "class": "임대료",
+      "item": "",
+      "amount": 3520000.0,
+      "source": "NEW 통합관리.xlsx"
+    },
+    {
+      "id": 200001,
+      "date": "2026-09-01",
+      "type": "고정",
+      "class": "노랑우산공제",
+      "item": "",
+      "amount": 100000.0,
+      "source": "NEW 통합관리.xlsx"
+    },
+    {
+      "id": 200002,
+      "date": "2026-09-01",
+      "type": "고정",
+      "class": "후원금",
+      "item": "",
+      "amount": 30000.0,
+      "source": "NEW 통합관리.xlsx"
+    }
+  ]
+}
