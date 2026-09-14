@@ -25,12 +25,12 @@ function normalize(s){
 }
 function publicState(s){
   const x=clone(normalize(s));
-  x.users=x.users.map(u=>({id:u.id,name:u.name,role:u.role}));
+  x.users=x.users.map(u=>({id:u.id,name:u.name,role:u.role,color:u.color||null}));
   return x;
 }
 function cleanIncoming(data){
   const x=normalize(data);
-  x.users=x.users.map(u=>({id:String(u.id||''),name:String(u.name||''),role:u.role==='admin'?'admin':'staff',passwordHash:u.passwordHash}));
+  x.users=x.users.map(u=>({id:String(u.id||''),name:String(u.name||''),role:u.role==='admin'?'admin':'staff',color:/^#[0-9A-Fa-f]{6}$/.test(String(u.color||''))?String(u.color):null,passwordHash:u.passwordHash}));
   return x;
 }
 function notify(){const msg=`data: ${JSON.stringify({version})}\n\n`;for(const res of clients){try{res.write(msg)}catch{clients.delete(res)}}}
@@ -111,7 +111,8 @@ async function handle(req,res){
       const idx=next.users.findIndex(x=>x.id===b.oldId),old=idx>=0?next.users[idx]:null;
       if(!old&&next.users.some(x=>x.id===id))return send(res,400,{error:'이미 존재하는 ID입니다.'});
       if(old&&b.oldId!=='admin'&&id==='admin')return send(res,400,{error:'admin ID는 변경할 수 없습니다.'});
-      const nu={id,name,role:d.role==='admin'?'admin':'staff',passwordHash:old?.passwordHash};
+      const color=/^#[0-9A-Fa-f]{6}$/.test(String(d.color||''))?String(d.color):null;
+      const nu={id,name,role:d.role==='admin'?'admin':'staff',color,passwordHash:old?.passwordHash};
       if(d.password){if(String(d.password).length<4)return send(res,400,{error:'비밀번호는 4자 이상이어야 합니다.'});nu.passwordHash=await bcrypt.hash(String(d.password),12)}
       if(!nu.passwordHash)nu.passwordHash=await bcrypt.hash('1234',12);
       if(old){next.users[idx]=nu;if(old.name!==name){next.sales.forEach(x=>{if(x.inputter===old.name)x.inputter=name});next.expenses.forEach(x=>{if(x.type==='변동'&&x.class==='급여'&&x.item===old.name)x.item=name})}}
